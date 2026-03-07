@@ -16,11 +16,20 @@
 """
 
 def main():
-   
-     """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    first_sentenсes = input('Введитие первую строку: ').lower().strip()
+    second_sentenсes = input('Введитие вторую строку: ').lower().strip()
+    
+    def check_sentences(first_sentenсes, second_sentenсes):
+      if first_sentenсes.isdigit() or second_sentenсes.isdigit():
+        return 0
+      elif len(first_sentenсes) == len(second_sentenсes):
+        return 1
+      elif len(first_sentenсes) != len(second_sentenсes) and len(first_sentenсes) > len(second_sentenсes):
+        return 2
+      elif len(first_sentenсes) != len(second_sentenсes) and second_sentenсes == 'learn':
+        return 3
+    
+    result = check_sentences(first_sentenсes, second_sentenсes)
+    print(result)
 if __name__ == "__main__":
     main()

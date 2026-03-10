@@ -15,13 +15,25 @@
     
 """
 
-questions_and_answers = {}
+questions_and_answers = {'Как дела?': 'Хорошо',
+                         'Что делаешь?':'Выполняю код',
+                         'Какие планы на завтра?':'Программировать',
+                         'Тебе нравиться Python?':'Да!',
+                         'Почему ты мне отвечаешь?':'Так запрограммирован',
+                         'Какой цвет ты любишь?':'Зеленый',
+                         'Ты сможешь ответить на все мои вопросы?':'Нет...',
+                         }
+
+#не понятно, почему он проходит до момента else в лупе столько раз, сколько ключей-ответов в словаре
 
 def ask_user(answers_dict):
-    """
-    Замените pass на ваш код
-    """
-    pass
+    while True:
+        answers_dict = input('Какой у вас вопрос?').capitalize().strip()
+        for key, value in questions_and_answers.items():
+            if answers_dict in key:
+                return print(value)
+            else:
+                print('Давай другой вопрос.')
     
 if __name__ == "__main__":
     ask_user(questions_and_answers)

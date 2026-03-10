@@ -14,22 +14,20 @@
   и выводя на экран результаты
 
 """
+first_sentenсes = input('Введитие первую строку: ').lower().strip()
+second_sentenсes = input('Введитие вторую строку: ').lower().strip()
 
-def main():
-    first_sentenсes = input('Введитие первую строку: ').lower().strip()
-    second_sentenсes = input('Введитие вторую строку: ').lower().strip()
-    
-    def check_sentences(first_sentenсes, second_sentenсes):
-      if first_sentenсes.isdigit() or second_sentenсes.isdigit():
-        return 0
-      elif len(first_sentenсes) == len(second_sentenсes):
-        return 1
-      elif len(first_sentenсes) != len(second_sentenсes) and len(first_sentenсes) > len(second_sentenсes):
-        return 2
-      elif len(first_sentenсes) != len(second_sentenсes) and second_sentenсes == 'learn':
-        return 3
-    
-    result = check_sentences(first_sentenсes, second_sentenсes)
-    print(result)
+
+def main(first_sentenсes, second_sentenсes):
+    if first_sentenсes.isdigit() or second_sentenсes.isdigit():
+      return 0
+    elif len(first_sentenсes) == len(second_sentenсes):
+      return 1
+    elif len(first_sentenсes) != len(second_sentenсes) and len(first_sentenсes) > len(second_sentenсes):
+      return 2
+    elif len(first_sentenсes) != len(second_sentenсes) and second_sentenсes == 'learn':
+      return 3
+
+
 if __name__ == "__main__":
-    main()
+    print(main(first_sentenсes, second_sentenсes))

@@ -13,12 +13,23 @@
 * Вывести содержимое переменной на экран
 
 """
-  
+user_year = int(input('укажите ваш возраст: '))
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    if user_year == 0:
+      return f'Ваш возраст: {user_year}, пора спать.'
+    
+    elif user_year > 0 and user_year <= 6:
+      return f'Ваш возраст: {user_year}, пора в садик.'
+    elif user_year > 6 and user_year <= 17:
+      return f'Ваш возраст: {user_year}, пора в школу.'
+    elif user_year > 18 and user_year <= 21:
+      return f'Ваш возраст: {user_year}, пора в ВУЗ.'
+    elif user_year > 22 and user_year <= 69:
+      return f'Ваш возраст: {user_year}, пора на работу.'
+    else:
+      return 'Пора на бесконечную пенсию'
+
+
+print(main())
 if __name__ == "__main__":
     main()
